@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Career Roadmap | EduMentor AI</title>
+
+<link rel="stylesheet" href="../style.css">
+
+<style>
+
+.container{
+    width:90%;
+    max-width:900px;
+    margin:50px auto;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+select{
+    width:100%;
+    padding:15px;
+    font-size:18px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    background:#4f46e5;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+#output{
+    margin-top:30px;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+li{
+    margin:10px 0;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>AI Career Roadmap</h1>
+
+<select id="career">
+
+<option>Select Career</option>
+
+<option>Frontend Developer</option>
+
+<option>Backend Developer</option>
+
+<option>Full Stack Developer</option>
+
+<option>AI Engineer</option>
+
+<option>Cyber Security</option>
+
+<option>Data Scientist</option>
+
+</select>
+
+<button onclick="generateRoadmap()">
+Generate Roadmap
+</button>
+
+<div id="output"></div>
+
+</div>
+
+<script>
+
+function generateRoadmap(){
+
+let career=document.getElementById("career").value;
+
+let roadmap="";
+
+if(career==="Frontend Developer"){
+
+roadmap=`
+<h2>Frontend Developer Roadmap</h2>
+
+<ol>
+
+<li>HTML</li>
+
+<li>CSS</li>
+
+<li>JavaScript</li>
+
+<li>Git & GitHub</li>
+
+<li>React.js</li>
+
+<li>API Integration</li>
+
+<li>Projects</li>
+
+<li>Portfolio</li>
+
+</ol>
+`;
+
+}
+
+else if(career==="Backend Developer"){
+
+roadmap=`
+<h2>Backend Developer Roadmap</h2>
+
+<ol>
+
+<li>JavaScript</li>
+
+<li>Node.js</li>
+
+<li>Express.js</li>
+
+<li>MongoDB</li>
+
+<li>REST API</li>
+
+<li>Authentication</li>
+
+<li>Deployment</li>
+
+</ol>
+`;
+
+}
+
+else if(career==="Full Stack Developer"){
+
+roadmap=`
+<h2>Full Stack Developer Roadmap</h2>
+
+<ol>
+
+<li>HTML CSS JS</li>
+
+<li>React</li>
+
+<li>Node.js</li>
+
+<li>MongoDB</li>
+
+<li>Firebase</li>
+
+<li>Projects</li>
+
+<li>Deployment</li>
+
+</ol>
+`;
+
+}
+
+else if(career==="AI Engineer"){
+
+roadmap=`
+<h2>AI Engineer Roadmap</h2>
+
+<ol>
+
+<li>Python</li>
+
+<li>Data Structures</li>
+
+<li>NumPy</li>
+
+<li>Pandas</li>
+
+<li>Machine Learning</li>
+
+<li>Deep Learning</li>
+
+<li>TensorFlow</li>
+
+<li>Build AI Projects</li>
+
+</ol>
+`;
+
+}
+
+else if(career==="Cyber Security"){
+
+roadmap=`
+<h2>Cyber Security Roadmap</h2>
+
+<ol>
+
+<li>Networking</li>
+
+<li>Linux</li>
+
+<li>Python</li>
+
+<li>Ethical Hacking</li>
+
+<li>OWASP</li>
+
+<li>CTF Practice</li>
+
+</ol>
+`;
+
+}
+
+else{
+
+roadmap=`
+<h2>Data Scientist Roadmap</h2>
+
+<ol>
+
+<li>Python</li>
+
+<li>Pandas</li>
+
+<li>Statistics</li>
+
+<li>Machine Learning</li>
+
+<li>SQL</li>
+
+<li>Power BI</li>
+
+<li>Projects</li>
+
+</ol>
+`;
+
+}
+
+document.getElementById("output").innerHTML=roadmap;
+
+}
+
+</script>
+
+</body>
+</html>

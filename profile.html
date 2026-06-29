@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile | EduMentor AI</title>
+
+<link rel="stylesheet" href="../style.css">
+
+<style>
+
+.container{
+    width:90%;
+    max-width:900px;
+    margin:40px auto;
+}
+
+.profile-card{
+    background:#fff;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    text-align:center;
+}
+
+.avatar{
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    background:#4f46e5;
+    color:white;
+    font-size:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:auto;
+}
+
+h2{
+    margin-top:15px;
+}
+
+.info{
+    margin-top:20px;
+    text-align:left;
+}
+
+.info p{
+    margin:10px 0;
+    font-size:16px;
+}
+
+.progress{
+    width:100%;
+    height:12px;
+    background:#ddd;
+    border-radius:10px;
+    margin-top:10px;
+}
+
+.bar{
+    width:60%;
+    height:100%;
+    background:#4f46e5;
+    border-radius:10px;
+}
+
+button{
+    margin-top:20px;
+    background:#4f46e5;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 style="text-align:center;">👤 My Profile</h1>
+
+<div class="profile-card">
+
+<div class="avatar">M</div>
+
+<h2>Murali</h2>
+<p>Frontend Developer | Student</p>
+
+<div class="info">
+
+<p>📧 Email: murali@example.com</p>
+
+<p>🎯 Career Goal: Full Stack Developer</p>
+
+<p>📊 Learning Progress</p>
+
+<div class="progress">
+<div class="bar"></div>
+</div>
+
+<p>60% Completed</p>
+
+</div>
+
+<button onclick="editProfile()">
+Edit Profile
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+function editProfile(){
+alert("Edit feature coming soon 🚀");
+}
+
+</script>
+
+</body>
+</html>

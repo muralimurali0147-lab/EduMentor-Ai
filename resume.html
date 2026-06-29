@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Analyzer | EduMentor AI</title>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+    <h2>EduMentor AI</h2>
+</header>
+
+<section style="padding:50px;text-align:center;">
+
+    <h1>Resume Analyzer</h1>
+
+    <p>Upload your resume to get AI suggestions.</p>
+
+    <br>
+
+    <input type="file" id="resumeFile" accept=".pdf,.doc,.docx">
+
+    <br><br>
+
+    <button onclick="analyzeResume()">
+        Analyze Resume
+    </button>
+
+    <br><br>
+
+    <div id="result"></div>
+
+</section>
+
+<script>
+
+function analyzeResume(){
+
+const file=document.getElementById("resumeFile").files[0];
+
+if(!file){
+
+alert("Please Upload Resume");
+
+return;
+
+}
+
+document.getElementById("result").innerHTML=`
+
+<h2>Analysis Result</h2>
+
+<p>✅ Resume Uploaded Successfully</p>
+
+<p>⭐ ATS Score : 82/100</p>
+
+<p>✔ Add more technical skills</p>
+
+<p>✔ Improve project descriptions</p>
+
+<p>✔ Include certifications</p>
+
+`;
+
+}
+
+</script>
+
+</body>
+</html>
+<script type="module">
+import { db } from "../firebase.js";
+import { collection, addDoc } 
+from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+
+window.saveResume = async function () {
+
+    const file = document.getElementById("resumeFile").files[0];
+
+    if (!file) {
+        alert("Upload Resume First");
+        return;
+    }
+
+    try {
+        await addDoc(collection(db, "resumes"), {
+            fileName: file.name,
+            type: file.type,
+            time: new Date()
+        });
+
+        document.getElementById("result").innerHTML =
+        "<h3>Saved to Firebase ✅</h3>";
+
+    } catch (e) {
+        console.log(e);
+    }
+}
+</script>

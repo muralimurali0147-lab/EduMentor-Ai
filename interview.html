@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interview Practice</title>
+
+<link rel="stylesheet" href="../style.css">
+
+<style>
+
+.container{
+    width:90%;
+    max-width:900px;
+    margin:40px auto;
+}
+
+.card{
+    background:#fff;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.question{
+    font-size:22px;
+    margin-bottom:20px;
+}
+
+textarea{
+    width:100%;
+    height:150px;
+    padding:15px;
+    font-size:16px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+button{
+    background:#4f46e5;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+#result{
+    margin-top:20px;
+    font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 style="text-align:center;">Interview Practice</h1>
+
+<div class="card">
+
+<p class="question" id="question">
+Tell me about yourself.
+</p>
+
+<textarea
+id="answer"
+placeholder="Type your answer here..."></textarea>
+
+<button onclick="nextQuestion()">
+Submit Answer
+</button>
+
+<div id="result"></div>
+
+</div>
+
+</div>
+
+<script>
+
+const questions=[
+
+"Tell me about yourself.",
+
+"What are your strengths?",
+
+"Why should we hire you?",
+
+"What is HTML?",
+
+"What is CSS?",
+
+"What is JavaScript?",
+
+"What is React?",
+
+"Explain API.",
+
+"What is Git?",
+
+"What is your dream job?"
+
+];
+
+let index=0;
+
+function nextQuestion(){
+
+let answer=document.getElementById("answer").value;
+
+if(answer.trim()==""){
+
+alert("Please enter your answer.");
+
+return;
+
+}
+
+document.getElementById("result").innerHTML=
+"✅ Answer Saved Successfully";
+
+index++;
+
+if(index>=questions.length){
+
+index=0;
+
+alert("Interview Practice Completed 🎉");
+
+}
+
+document.getElementById("question").innerHTML=
+questions[index];
+
+document.getElementById("answer").value="";
+
+}
+
+</script>
+
+</body>
+</html>

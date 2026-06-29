@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduMentor AI</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+    <script type="module">
+import { db } from "../firebase.js";
+import { collection, getDocs } 
+from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+
+async function loadResumes(){
+
+    const snap = await getDocs(collection(db, "resumes"));
+
+    let html = "<h3>📄 Uploaded Resumes</h3>";
+
+    snap.forEach(doc => {
+        const data = doc.data();
+
+        html += `
+            <div style="background:#fff;padding:10px;margin:10px;border-radius:10px">
+                <p>📄 ${data.fileName}</p>
+                <p>⏰ ${data.time.toDate()}</p>
+            </div>
+        `;
+    });
+
+    document.body.innerHTML += html;
+}
+
+loadResumes();
+</script>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <h2>EduMentor AI</h2>
+        </div>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#features">Features</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <button id="darkBtn">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+
+        <div class="hero-text">
+            <h1>Your AI Career Mentor</h1>
+
+            <p>
+                Analyze Resume • Generate Career Roadmap •
+                Learn Skills • Practice Interviews
+            </p>
+
+            <button class="startBtn">
+                Get Started
+            </button>
+        </div>
+
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900"
+                alt="Students">
+        </div>
+
+    </section>
+
+    <!-- Features -->
+
+    <section id="features">
+
+        <h2>Features</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <i class="fa-solid fa-file"></i>
+                <h3>Resume Analyzer</h3>
+                <p>Upload your resume and get AI feedback.</p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-road"></i>
+                <h3>Career Roadmap</h3>
+                <p>AI generates a personalized learning roadmap.</p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-book"></i>
+                <h3>Course Recommendation</h3>
+                <p>Find the best courses based on your goals.</p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-user-tie"></i>
+                <h3>Interview Practice</h3>
+                <p>Practice technical and HR interview questions.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- About -->
+
+    <section id="about">
+
+        <h2>About EduMentor AI</h2>
+
+        <p>
+            EduMentor AI is an intelligent career guidance platform
+            that helps students build resumes, prepare for interviews,
+            learn skills and achieve their dream careers using AI.
+        </p>
+
+    </section>
+
+    <!-- Contact -->
+
+    <section id="contact">
+
+        <h2>Contact</h2>
+
+        <form>
+
+            <input type="text"
+                placeholder="Your Name">
+
+            <input type="email"
+                placeholder="Email">
+
+            <textarea
+                placeholder="Message"></textarea>
+
+            <button>
+                Send Message
+            </button>
+
+        </form>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 EduMentor AI | Built for Vibeathon
+        </p>
+
+    </footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
